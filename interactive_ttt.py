@@ -40,21 +40,3 @@ while not game_over:
         game_over = 1
 print("the winner is ", outcome)
     
-class TreeNode:
-    def __init__(self, parent):
-        self.parent = parent
-        self.children = []
-        if parent:
-            parent.children.append(self)
-
-    def tree_edges(self):
-        edge_set = []
-        kids = self.children 
-        for child in kids:
-            edge_set.append((child,self))
-            edge_set += child.tree_edges()
-        return edge_set            
-
-
-root = TreeNode(None)
-node1 = TreeNode(root)
